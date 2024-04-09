@@ -11,10 +11,18 @@ export const HeaderColorTextPicker: React.FC<IProps> = (props) => {
     const { color, index } = props
     const input_color_value = useRef<string>(color?.hex)
 
+
     return (
         <div className="color-template_item">
             <p>{color?.name}</p>
-            <label className='hex-string' htmlFor={index}>{color?.hex}</label>
+            <label
+                key={Math.random()}
+                className='hex-string'
+                htmlFor={index}
+                onClick={function (e) {
+                    e.currentTarget.style.borderColor = '#6a6a6a'
+                }}
+            >{color?.hex}</label>
             <input
                 type="color"
                 id={index}
