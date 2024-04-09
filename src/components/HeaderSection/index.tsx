@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import thumb from '../../assets/_images/Thumbnail/Burgundy21.png'
 import background from '../../assets/_images/Asset/foreground.png'
 import { ColorTemplate } from '../ColorTemplate'
 import { HeaderColorText } from './HeaderColorText'
