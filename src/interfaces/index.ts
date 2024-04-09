@@ -24,7 +24,7 @@ export interface IRelatedCombinationItem {
     slug?: string
     name?: string
     likes?: number
-    colors?: IColorItem[]
+    colors?: string[]
 }
 
 

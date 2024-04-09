@@ -41,9 +41,12 @@
 
 .related-combination_item.see-more {
     flex-basis: 300px;
+    height: 75px;
     background: #F2F3F5;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    user-select: none;
 }
 
 .related-combination_browse {
