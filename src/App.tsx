@@ -1,15 +1,23 @@
 import './App.css';
-import { Body } from './components/Body';
-import { Header } from './components/Header';
+import React from 'react'
+import { Header } from './components/HeaderSection';
+import { RelatedCombinationSection } from './components/RelatedCombinationSection';
+
+
+interface IProvider {
+}
+export const AppContext = React.createContext<IProvider>({})
 
 function App() {
   return (
-    <div className="App">
-      <div className="app-content">
-        <Header />
-        <Body />
+    <AppContext.Provider value={{}}>
+      <div className="App">
+        <div className="app-content">
+          <Header />
+          <RelatedCombinationSection />
+        </div>
       </div>
-    </div>
+    </AppContext.Provider>
   );
 }
 
