@@ -29,7 +29,8 @@ input::-moz-focus-inner {
   color: #FFF;
 }
 
-.header_breadcumb svg {
+.header_breadcumb svg,
+.color-template_item svg {
   fill: currentColor;
 }
 
