@@ -1,0 +1,40 @@
+.header {
+  background-color: #F7CCCB;
+  padding: 24px 0;
+}
+
+.body {
+  position: relative;
+}
+
+.background_img {
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  background: #F7CCCB;
+  top: -153px;
+  right: 0px;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.header_content,
+.body_content {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.header_breadcumb {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.header_title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 24px;
+}
