@@ -8,8 +8,8 @@ export const HeaderColorText: React.FC<IProps> = (props) => {
     const { colors } = props
     return (
         <div className='color-template is-text'>
-            {colors?.map(c => {
-                return <HeaderColorTextPicker key={c?.hex} color={c} />
+            {colors?.map((c, i) => {
+                return <HeaderColorTextPicker key={c?.hex} color={c} index={i + ''} />
             })}
         </div>
     )

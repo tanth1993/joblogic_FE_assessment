@@ -8,6 +8,7 @@ import { ICombination } from './interfaces';
 interface IProvider {
   selectedConbination?: ICombination
   onChangeSelectedCombination?: (selectedItemId?: number) => void
+  onChangeColorItem?: (hexCode?: string, indexItem?: number) => void
 }
 export const AppContext = React.createContext<IProvider>({})
 
@@ -23,11 +24,27 @@ function App() {
 
     setSelectedConbination(dataItem)
   }
+
+  const onChangeColorItem = (hexCode?: string, indexItem?: number) => {
+    const selectedConbinationTemp = { ...selectedConbination }
+
+    selectedConbinationTemp.combination.colors = selectedConbinationTemp.combination.colors?.map((c, i) => {
+      const newColor = c
+      if (i === indexItem) {
+        newColor.hex = hexCode
+      }
+      return newColor
+    })
+
+    setSelectedConbination(selectedConbinationTemp)
+  }
+
   return (
     <AppContext.Provider
       value={{
         selectedConbination,
-        onChangeSelectedCombination: (selectedItemId?: number) => onChangeSelectedCombination(selectedItemId)
+        onChangeSelectedCombination: (selectedItemId?: number) => onChangeSelectedCombination(selectedItemId),
+        onChangeColorItem: (hexCode?: string, indexItem?: number) => onChangeColorItem(hexCode, indexItem)
       }}>
       <div className="App">
         <div className="app-content">

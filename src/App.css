@@ -136,10 +136,16 @@ input::-moz-focus-inner {
   text-decoration: underline;
 }
 
-.color-template.is-text .color-template_item p:nth-child(2) {
+.color-template.is-text .color-template_item .hex-string {
   font-weight: 600;
   opacity: 0.5;
   margin-top: 5px;
+}
+
+input[type="color"] {
+  opacity: 0;
+  /* visibility: hidden; */
+  height: 0;
 }
 
 .header_color_thumbnail {
