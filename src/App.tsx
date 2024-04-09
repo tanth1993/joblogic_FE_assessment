@@ -14,7 +14,7 @@ export const AppContext = React.createContext<IProvider>({})
 function App() {
   const data = useRef<ICombination[]>(dataJson.combinations as ICombination[]).current
   console.log(data)
-  const [selectedConbination, setSelectedConbination] = useState(data[5])
+  const [selectedConbination, setSelectedConbination] = useState(data[3])
 
   const onChangeSelectedCombination = (selectedItem?: ICombination) => {
 

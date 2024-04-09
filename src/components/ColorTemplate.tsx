@@ -8,7 +8,9 @@ export const ColorTemplate: React.FC<IProps> = (props) => {
     return (
         <div className='color-template'>
             {colors?.map(c => {
-                return <div className="color-template_item" style={{ backgroundColor: c?.hex }} key={c?.hex}>{c?.hex}</div>
+                return <div className="color-template_item" style={{ backgroundColor: c?.hex }} key={c?.hex}>
+                    <span>{c?.hex}</span>
+                </div>
             })}
         </div>
     )
