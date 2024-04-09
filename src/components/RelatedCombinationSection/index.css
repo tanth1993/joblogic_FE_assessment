@@ -16,6 +16,8 @@
 
 .related-combination_item {
     display: flex;
+    position: relative;
+    cursor: pointer;
 }
 
 .related-combination_item .related-combination_item_color {
@@ -59,4 +61,33 @@
     display: inline-block;
     background-color: #F7CAC9;
     border-radius: 4px;
+}
+
+.related-combination_item_info {
+    position: absolute;
+    top: 100%;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .2s;
+}
+
+.info_like {
+    display: flex;
+    gap: 8px;
+}
+
+.like_number {
+    margin-top: 2px;
+}
+
+.related-combination_item:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.related-combination_item:hover .related-combination_item_info {
+    opacity: 1;
 }

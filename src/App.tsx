@@ -7,7 +7,7 @@ import { ICombination } from './interfaces';
 
 interface IProvider {
   selectedConbination?: ICombination
-  onChangeSelectedCombination?: (selectedItem?: ICombination) => void
+  onChangeSelectedCombination?: (selectedItemId?: number) => void
 }
 export const AppContext = React.createContext<IProvider>({})
 
@@ -16,14 +16,18 @@ function App() {
   console.log(data)
   const [selectedConbination, setSelectedConbination] = useState(data[0])
 
-  const onChangeSelectedCombination = (selectedItem?: ICombination) => {
+  const onChangeSelectedCombination = (selectedItemId?: number) => {
+    const dataItem = data?.find(d => d?.combination?.id === selectedItemId)
 
+    if (!dataItem) return
+
+    setSelectedConbination(dataItem)
   }
   return (
     <AppContext.Provider
       value={{
         selectedConbination,
-        onChangeSelectedCombination: (selectedItem?: ICombination) => onChangeSelectedCombination(selectedItem)
+        onChangeSelectedCombination: (selectedItemId?: number) => onChangeSelectedCombination(selectedItemId)
       }}>
       <div className="App">
         <div className="app-content">
